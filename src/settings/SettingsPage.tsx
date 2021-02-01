@@ -1,5 +1,5 @@
 import React from "react";
-import { ApiHelper, Tabs, TabEdit, PageList, PageEdit, PageInterface, UserHelper } from "./components"
+import { ApiHelper, Tabs, PageList, PageEdit, PageInterface, UserHelper } from "./components"
 import { Row, Col } from "react-bootstrap"
 
 export const SettingsPage = () => {

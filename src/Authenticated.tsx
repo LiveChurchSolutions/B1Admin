@@ -2,7 +2,6 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { SettingsPage } from "./settings/SettingsPage";
 import { Header } from "./components";
-import { UserHelper } from "./helpers"
 import UserContext from "./UserContext";
 
 interface Props {
@@ -11,7 +10,7 @@ interface Props {
 
 export const Authenticated: React.FC<Props> = (props) => {
     var user = React.useContext(UserContext)?.userName; //to force rerender on login
-    return (
+    if (user || true) return (
         <>
             <Header></Header>
             <div className="container">

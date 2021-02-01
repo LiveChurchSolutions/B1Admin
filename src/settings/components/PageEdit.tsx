@@ -3,7 +3,7 @@ import { PageInterface, ApiHelper, InputBox } from "."
 import { FormGroup } from "react-bootstrap";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { EditorState, ContentState, convertToRaw, convertFromRaw } from "draft-js";
+import { EditorState, ContentState, convertToRaw } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 import htmlToDraft from "html-to-draftjs";
 
@@ -54,7 +54,7 @@ export const PageEdit: React.FC<Props> = (props) => {
         else setEditorState(EditorState.createWithContent(ContentState.createFromText("")));
     }
 
-    React.useEffect(() => { init(); }, [props.page]);
+    React.useEffect(init, [props.page]);
 
     return (
         <InputBox headerIcon="fas fa-code" headerText="Edit Page" saveFunction={handleSave} cancelFunction={handleCancel} deleteFunction={checkDelete()} >

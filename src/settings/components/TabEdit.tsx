@@ -1,6 +1,6 @@
 import React from "react";
 import { InputBox, LinkInterface, ApiHelper } from "."
-import { PageInterface, UserHelper } from "../../helpers";
+import { PageInterface } from "../../helpers";
 
 interface Props { currentTab: LinkInterface, updatedFunction?: () => void }
 
