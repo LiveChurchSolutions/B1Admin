@@ -7,6 +7,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN git submodule foreach git pull
+
 RUN git submodule init && git submodule update
 
 RUN npm install
