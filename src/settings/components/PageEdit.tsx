@@ -1,5 +1,5 @@
 import React from "react";
-import { PageInterface, ApiHelper, InputBox } from "."
+import { PageInterface, ApiHelper, InputBox, UniqueIdHelper } from "."
 import { FormGroup } from "react-bootstrap";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
@@ -18,7 +18,7 @@ export const PageEdit: React.FC<Props> = (props) => {
             ApiHelper.delete("/pages/" + page.id, "B1Api").then(() => { setPage(null); props.updatedFunction(); });
         }
     }
-    const checkDelete = () => { if (page?.id > 0) return handleDelete; else return null; }
+    const checkDelete = () => { if (!UniqueIdHelper.isMissing(page?.id)) return handleDelete; else return null; }
     const handleCancel = () => { props.updatedFunction(); }
 
 
