@@ -5,7 +5,7 @@ RUN apk update && \
 
 WORKDIR /app
 
-COPY . .
+RUN git clone https://github.com/LiveChurchSolutions/B1Admin.git .
 
 RUN git submodule foreach git pull
 
