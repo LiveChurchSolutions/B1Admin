@@ -13,6 +13,6 @@ RUN git submodule init && git submodule update
 
 RUN npm install
 
-CMD npm start
+CMD npm run $ENVIRONMENT
 
 EXPOSE 3301
