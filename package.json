@@ -33,11 +33,11 @@
     "test": "react-scripts test --env=jsdom",
     "predeploy-staging": "export REACT_APP_STAGE=staging&& npm run build",
     "exec-deploy-staging": "aws s3 sync build/ s3://staging-b1-admin",
-    "postdeploy-staging": "aws cloudfront create-invalidation --distribution-id E3EKWD711AAFS5 --paths /*",
+    "postdeploy-staging": "aws cloudfront create-invalidation --distribution-id E3EKWD711AAFS5 --paths \"/*\"",
     "deploy-staging": "npm run predeploy-staging && npm run exec-deploy-staging && npm run postdeploy-staging",
     "predeploy-prod": "export REACT_APP_STAGE=prod&& npm run build",
     "exec-deploy-prod": "aws s3 sync build/ s3://b1-admin",
-    "postdeploy-prod": "aws cloudfront create-invalidation --distribution-id E28L6GBY351H3W --paths /*",
+    "postdeploy-prod": "aws cloudfront create-invalidation --distribution-id E28L6GBY351H3W --paths \"/*\"",
     "deploy-prod": "npm run predeploy-prod && npm run exec-deploy-prod && npm run postdeploy-prod",
     "eject": "react-scripts eject"
   },
